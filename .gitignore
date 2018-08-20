@@ -1,0 +1,5 @@
+__pycache__/
+*.sql
+logs/
+*.pyc
+需求文档.txt
