@@ -87,4 +87,4 @@ class CCP(object):
 ccp = CCP.instance()
 
 if __name__ == '__main__':
-    ccp.sendTemplateSMS('17319082782', ['666666', 3], 1)
+    ccp.sendTemplateSMS('173xxxx1782', ['666666', 3], 1)
