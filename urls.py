@@ -2,7 +2,7 @@
 
 import os
 from tornado.web import StaticFileHandler
-from handlers import Passport, Verifycode, Profile
+from handlers import Passport, Verifycode, Profile, House
 
 handlers = [
     # (r"/log", Passport.LogHandler),
@@ -16,13 +16,13 @@ handlers = [
     (r"/api/profile", Profile.ProfileHandler), # 个人主页获取个人信息
     (r"/api/profile/name", Profile.NameHandler), # 个人主页修改用户名
     (r"/api/profile/auth", Profile.AuthHandler), # 实名认证
-    # (r"/api/house/area", House.AreaInfoHandler), # 城区信息
-    # (r'^/api/house/info$', House.HouseInfoHandler), # 上传房屋的基本信息
-    # (r'^/api/house/image$', House.HouseImageHandler), # 上传房屋图片
-    # (r'^/api/house/my$', House.MyHousesHandler), # 查询用户发布的房源
-    # (r'^/api/house/index$', House.IndexHandler), # 首页
-    # (r'^/api/house/list$', House.HouseListHandler), # 房屋过滤列表数据
-    # (r'^/api/house/list2$', House.HouseListRedisHandler), # 房屋过滤列表数据
+    (r"/api/house/area", House.AreaInfoHandler), # 城区信息
+    (r'^/api/house/info$', House.HouseInfoHandler), # 上传房屋的基本信息
+    (r'^/api/house/image$', House.HouseImageHandler), # 上传房屋图片
+    (r'^/api/house/my$', House.MyHousesHandler), # 查询用户发布的房源
+    (r'^/api/house/index$', House.IndexHandler), # 首页
+    (r'^/api/house/list$', House.HouseListHandler), # 房屋过滤列表数据
+    (r'^/api/house/list2$', House.HouseListRedisHandler), # 房屋过滤列表数据
     # (r'^/api/order$', Orders.OrderHandler), # 下单
     # (r'^/api/order/my$', Orders.MyOrdersHandler), # 我的订单，作为房客和房东同时适用
     # (r'^/api/order/accept$', Orders.AcceptOrderHandler), # 接单

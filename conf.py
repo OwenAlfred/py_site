@@ -35,5 +35,8 @@ SESSION_EXPIRES_SECONDS = 86400 # session数据有效期， 单位秒
 # 用户头像url前缀
 AVATAR_URL_PREFIX = "./static/upload/avatar/"
 
+# 上传的房屋图片url前缀
+HOUSE_IMG_URL_PREFIX = "./static/upload/house/"
+
 # 密码加密用的混淆密钥
 PASSWD_HASH_KEY = "nlgCjaTXQX2jpupQFQLoQo5N4OkEmkeHsHD9+BBx2WQ="
