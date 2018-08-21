@@ -3,6 +3,7 @@ __pycache__/
 logs/
 *.pyc
 需求文档.txt
+static/upload
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

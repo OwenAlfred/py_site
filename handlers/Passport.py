@@ -73,7 +73,7 @@ class LoginHandler(BaseHandler):
             return self.write(dict(errcode=RET.PARAMERR, errmsg='参数不完整'))
 
         try:
-            res = self.db.get('select up_name, up_real_name, up_passwd,up_avatar, up_id_card from ih_user_profile where up_mobile=%s', mobile)
+            res = self.db.get('select up_user_id, up_name, up_real_name, up_passwd,up_avatar, up_id_card from ih_user_profile where up_mobile=%s', mobile)
             # print('登录时查询到的结果：%s' % res)
         except Exception as e:
             logging.error(e)
@@ -87,7 +87,8 @@ class LoginHandler(BaseHandler):
             return self.write(dict(errcode=RET.PWDERR, errmsg='密码错误'))
 
         # 登录成功，存入session
-        self.session = Session(self)  
+        self.session = Session(self) 
+        self.session.data['user_id'] =  res['up_user_id']
         self.session.data['user_name'] = res['up_name']
         self.session.data['mobile'] = mobile
         self.session.data['avatar'] = conf.AVATAR_URL_PREFIX + res['up_avatar']
